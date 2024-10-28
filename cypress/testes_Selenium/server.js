@@ -20,6 +20,13 @@ app.post('/run-test', async (req, res) => {
     const button = await driver.wait(until.elementLocated(By.css('#windowButton')), 10000);
     await driver.wait(until.elementIsVisible(button), 10000);
     await driver.wait(until.elementIsEnabled(button), 10000);
+    
+    // Role até o botão usando JavaScript
+    await driver.executeScript("arguments[0].scrollIntoView(true);", button);
+
+    // Aguarde um breve intervalo para garantir que o scroll terminou
+    await driver.sleep(500);
+    
     await button.click();
     console.log('Clicked on the window button');
 
