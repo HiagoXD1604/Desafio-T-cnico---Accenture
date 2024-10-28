@@ -1,0 +1,26 @@
+{
+  "description": "",
+  "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.5",
+    "@cypress/webpack-preprocessor": "^6.0.2",
+    "@faker-js/faker": "^9.1.0",
+    "cypress": "^13.15.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-drag-drop": "^1.1.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e/step_definitions"
+  },
+  "scripts": {
+    "abrir": "npx cypress open",
+    "testes": "npx cypress run --spec 'cypress/e2e/step_definitions/**/*.feature'",
+    "iniciar-server-selenium": "node cypress/testes_Selenium/server.js",
+    "teste-Window-Selenium": "node cypress/testes_Selenium/testeBrowserWindowSelenium.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "selenium-webdriver": "^4.25.0"
+  }
+}
